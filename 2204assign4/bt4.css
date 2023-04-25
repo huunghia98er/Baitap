@@ -1,0 +1,21 @@
+.time {
+  text-align: center;
+  border-radius: 10px;
+  width: 60%;
+  height: 270px;
+  background-color: #9966FF;
+  margin: auto auto auto auto;
+  padding-top: 130px;
+}
+
+.screen {
+  width: 70%;
+  margin: 15px auto 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  color: #0381bb;
+  font-size: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
