@@ -1,0 +1,50 @@
+h1{
+  text-align: center;
+}
+
+.Watch {
+  width: 60%;
+  height: 270px;
+  background-color: #9966FF;
+  border-radius: 10px;
+  margin: auto auto auto auto;
+}
+
+.timerDisplay {
+  width: 70%;
+  margin: 15px auto 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  color: #0381bb;
+  font-size: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.buttons {
+  width: 90%;
+  margin: 60px auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 120px;
+  height: 45px;
+  background-color: #205e94;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+#startTimer {
+  background-color: #99CC66;
+}
+
+#stopTimer {
+  background-color: #33CCCC;
+}
+
+#resetTimer {
+  background-color: #FF3300;
+}

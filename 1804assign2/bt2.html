@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="bt2.css" />
+    <script src="bt2.js"></script>
+  </head>
+  <body>
+
+    <h1>
+      GeeksforGeeks Survey Form
+    </h1>
+    
+    <div class = "form">
+      
+      <div>
+        <label for = "name" id = "inline">Name:</label> <br>
+        <input type = "text" placeholder="Enter your name">        
+        <br>
+        <label for = "email">Email:</label> <br>
+        <input type = "email" placeholder="Enter your email">
+        <br>
+        <label for = "age">Age:</label> <br>
+        <input type = "number" placeholder="Enter your age">
+        <br>
+        <label for = "name">Which option best described you?</label> <br>
+          <select name = "option">
+            <option>Student</option>
+            <option>Teacher</option>
+            <option>Worker</option>
+            <option>Other</option>
+          </select>
+      </div>
+      
+      <div>
+        <br>
+        <p>Would you recommend GeeksforGeeks to a friends?</p>
+          <input type = "radio" name = "share" value = "Yes">
+          <label for = "Yes">Yes</label> 
+          <br>
+          <input type = "radio" name = "share" value = "No">
+          <label for = "No">No</label>
+          <br>
+          <input type = "radio" name = "share" value = "Maybe">
+          <label for = "Maybe">Maybe</label>
+          <br>
+      </div>
+
+      <div>
+        <br>
+        <p>Language and Frameworks known (Check all that apply):</p>
+          <input type = "checkbox" value = "C">
+          <label for = "C">C</label>
+          <br>
+          <input type = "checkbox" value = "C++">
+          <label for = "C++">C++</label>
+          <br>
+          <input type = "checkbox" value = "C#">
+          <label for = "C#">C#</label>
+          <br>
+          <input type = "checkbox" value = "Java">
+          <label for = "Java">Java</label>
+          <br>
+          <input type = "checkbox" value = "Python">
+          <label for = "Python">Python</label>
+          <br>
+          <input type = "checkbox" value = "Javascript">
+          <label for = "Javascript">Javascript</label>
+          <br>
+          <input type = "checkbox" value = "React">
+          <label for = "React">React</label>
+          <br>
+          <input type = "checkbox" value = "Angular">
+          <label for = "Angular">Angular</label>
+          <br>
+          <input type = "checkbox" value = "Django">
+          <label for = "Django">Django</label>
+          <br>
+          <input type = "checkbox" value = "Spring">
+          <label for = "Spring">Spring</label>
+      </div>
+      
+      <div>
+        <p>Any comments or suggestions</p>
+        <input type = "text">
+      </div>
+    
+      <input type="submit" value="Submit" onclick="ok()">
+      
+    </div>    
+  </body>
+</html>
