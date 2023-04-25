@@ -1,0 +1,56 @@
+body {
+  background-color: #1fe28e
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.picture {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.caption-text {
+  word-wrap: break-word;
+  text-align: left;
+  font-size: 20px;
+}
+
+.infor_ {
+  border-style: groove;
+  border-color: black;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 20px #efef51df;
+}
+
+.Title {
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+  padding-top: 5px;
+  text-shadow: 3px 3px 4px #000000;
+  max-height: 20px;
+}
+
+.infor {
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.moreinfor {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
