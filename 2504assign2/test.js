@@ -1,17 +1,16 @@
 function getage() {
     var d = new Date()
-    var by = document.getElementById("a").value;
+    var by = document.getElementById("a");
     var year = d.getFullYear();
-    var result = year - by;
+    var result = year - by.value;
     var abc = document.getElementById('result1');
-    var xyz = document.getElementById("result1")
 
 
-    if (by > year) {
+    if (by.value > year) {
         alert
             ("Nam sinh ban nhap lon hon nam hien tai!");
-        xyz.value = "";
         abc.innerHTML = "";
+        by.value = "";
     }
     else {
         abc.innerHTML =
