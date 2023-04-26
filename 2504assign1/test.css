@@ -1,0 +1,14 @@
+input {
+    height: 50px;
+    font-size: 30px;
+}
+
+button {
+    height: 30px;
+    width: 60px;
+    margin: 20px auto 0 160px;
+}
+
+#result1 {
+    font-size: 20px;
+}
