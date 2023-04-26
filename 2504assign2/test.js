@@ -7,13 +7,14 @@ function getage() {
     var xyz = document.getElementById("result1")
 
 
-    if (by > year){
+    if (by > year) {
         alert
-        ("Nam sinh ban nhap lon hon nam hien tai!");
+            ("Nam sinh ban nhap lon hon nam hien tai!");
         xyz.value = "";
+        abc.innerHTML = "";
     }
     else {
-        abc.innerHTML = 
-        "So tuoi cua ban la: "+result;
+        abc.innerHTML =
+            "So tuoi cua ban la: " + result;
     }
 }
