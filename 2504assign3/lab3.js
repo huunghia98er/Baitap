@@ -8,7 +8,7 @@ function CMastime() {
     const oneday = 24*60*60*1000;
     var CMdate = new Date(today.getFullYear(), 11, 25);
 
-    if (today.getMonth() === CMdate.getMonth() && today.getDate() > CMdate.getDay()){
+    if (today.getMonth() === CMdate.getMonth() && today.getDate() > CMdate.getDate()){
         CMdate.getFullYear += 1;
     }
     let dayleft = Math.floor((CMdate.getTime() - today.getTime()) / oneday);
