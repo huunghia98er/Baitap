@@ -86,20 +86,14 @@ var component = function (){
     }
 
     var DisplayResult = function() {
-        if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
-            document.getElementById('container').style.backgroundColor = '#1E90FF'
-        }
-        else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+        if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
             document.getElementById('container').style.backgroundColor = '#00FF00'
         } else {
             document.getElementById('container').style.backgroundColor = 'red'
         }
         restartButton.style.display = 'inline-block'
         nextButton.addEventListener('click', function() {
-            if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
-                document.getElementById('container').style.backgroundColor = '#1E90FF'
-            }
-            else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+            if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
                 document.getElementById('container').style.backgroundColor = '#00FF00'
             } else {
                 document.getElementById('container').style.backgroundColor = 'red'
@@ -107,10 +101,7 @@ var component = function (){
             restartButton.style.display = 'inline-block'
         })
         prevButton.addEventListener('click', function() {
-            if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
-                document.getElementById('container').style.backgroundColor = '#1E90FF'
-            }
-            else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+            if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
                 document.getElementById('container').style.backgroundColor = '#00FF00'
             } else {
                 document.getElementById('container').style.backgroundColor = 'red'
@@ -128,9 +119,11 @@ var component = function (){
         a = 0;
         nextButton.addEventListener('click', function(){
             document.getElementById('container').style.backgroundColor = '#1E90FF'
+            restartButton.style.display = 'none'
         })
         prevButton.addEventListener('click', function(){
             document.getElementById('container').style.backgroundColor = '#1E90FF'
+            restartButton.style.display = 'none'
         })        
     }
 
