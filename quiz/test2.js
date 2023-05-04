@@ -29,10 +29,12 @@ var nextButton  = document.getElementById("next")
 var prevButton  = document.getElementById("prev")
 var restartButton  = document.getElementById("restart")
 var submitButton = document.getElementById("submit")
-var index = 0;
-var chooseAnsValues = []
-var sum = 0
-var totalPoint = 0
+let index = 0;
+let chooseAnsValues = [];
+let sum = 0;
+let totalPoint = 0;
+let a = 0;
+
 
 var component = function (){
     var DisplayButton = function () {
@@ -54,11 +56,9 @@ var component = function (){
         }
     }
     var Check = (question, index) => {
-        // load cau tra loi cua ngi tham gia
         let chooseAnsValue
         question.answers.forEach((value,index) =>{
-            if(document.getElementById(index).checked){
-                // element này là element mà ngi dùng chọn
+            if (document.getElementById(index).checked){
                 chooseAnsValue = document.getElementById(index).value
             }
         })
@@ -74,41 +74,47 @@ var component = function (){
                 submitButton.style.display = 'inline-block'
                 sum = 0
                 totalPoint = 0
+                a++;
                 alert('Vui long nhap day du cau tra loi!')
                 break;
+            } else {
+                a = 0
             }
         }
     }
     var DisplayResult = function() {
-        if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
-            document.getElementById('container').style.backgroundColor = '#00FF00'
-        } else if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
+        if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
             document.getElementById('container').style.backgroundColor = '#1E90FF'
+        }
+        else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+            document.getElementById('container').style.backgroundColor = '#00FF00'
         } else {
             document.getElementById('container').style.backgroundColor = 'red'
         }
-        submitButton.style.display = 'none'
         restartButton.style.display = 'inline-block'
         nextButton.addEventListener('click', function() {
-            if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
-                document.getElementById('container').style.backgroundColor = '#00FF00'
-            } else if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
+            if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
                 document.getElementById('container').style.backgroundColor = '#1E90FF'
+            }
+            else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+                document.getElementById('container').style.backgroundColor = '#00FF00'
             } else {
                 document.getElementById('container').style.backgroundColor = 'red'
             }
             restartButton.style.display = 'inline-block'
         })
         prevButton.addEventListener('click', function() {
-            if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
-                document.getElementById('container').style.backgroundColor = '#00FF00'
-            } else if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
+            if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
                 document.getElementById('container').style.backgroundColor = '#1E90FF'
+            }
+            else if (parseInt(chooseAnsValues[index]) === parseInt(questions[index].correctAnswer)) {
+                document.getElementById('container').style.backgroundColor = '#00FF00'
             } else {
                 document.getElementById('container').style.backgroundColor = 'red'
             }
             restartButton.style.display = 'inline-block'
         })
+        CloseEvent
     }
     var loadQuestion = (question, index) => {
         DisplayButton()
@@ -118,48 +124,47 @@ var component = function (){
         text += "<h2 >Question "+ (index + 1) + " </h2>"
         text += "<p>"+ question.questionText + "</p>"
         text += '<ul>';
-        // vong lap chay qua questions.anwsers
         question.answers.forEach((value,index)=>{
             text += '<li>';
-            // <input type="radio" id="html" name="fav_language" value="HTML">
             text += '<input type="radio"'+((chooseValue !== undefined && chooseValue == value) ? 'checked' : '' )
                 +' id = '+index+'   name = "answer" value = '+value+' >'+value+'</input>'
             text += '</li>';
         })
         text += '</ul>';
-        quizComponent.innerHTML = text;
+        quizComponent.innerHTML = text
         quizComponent.style.display = "block"
     }
     var loadPage = function (){
         nextButton.addEventListener('click', function (){
+            DisplayButton();
             Check(questions[index], index)
-            console.log(index)
             index++;
-            console.log(index)
             loadQuestion(questions[index],index)
         })
         prevButton.addEventListener('click', function (){
-            Check(questions[index], index)
-            console.log(index)
+            DisplayButton();
+            Check(questions[index], index);
             index--;
-            console.log(index)
-            loadQuestion(questions[index],index)
+            loadQuestion(questions[index],index);
+        })
+        submitButton.addEventListener('click', function (){
+            Check(questions[index], index)
+            CheckAnswers()
+            restartButton.style.display = 'inline-block'
+            if (a === 0){
+                alert('Ban da tra loi dung ' +sum+' cau!' + 'Tong diem: '+totalPoint);
+                DisplayResult();
+            }
         })
         restartButton.addEventListener('click', function (){
             index = 0;
             chooseAnsValues = [];
             sum = 0;
             totalPoint = 0;
-            loadPage();
+            submitchoose = 0;
+            nextButton.removeEventListener('click', DisplayResult)
+            prevButton.removeEventListener('click', DisplayResult)
             loadQuestion(questions[index],index);
-        })
-        submitButton.addEventListener('click', function (){
-            Check(questions[index], index)
-            CheckAnswers()
-            if (sum !== 0) {
-                alert('Ban da tra loi dung ' +sum+' cau!' + 'Tong diem: '+totalPoint)
-                DisplayResult()
-            }
         })
     }
 
@@ -167,8 +172,8 @@ var component = function (){
         init : function(){
             loadQuestion(questions[index],index);
             loadPage();
-            DisplayButton()
         }
     }
 }();
+
 document.addEventListener('DOMContentLoaded', function (){component.init()});
