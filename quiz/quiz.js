@@ -36,6 +36,7 @@ let totalPoint = 0;
 let a = 0;
 
 
+
 var component = function (){
     var DisplayButton = function () {
         if (index === 0){
@@ -71,6 +72,7 @@ var component = function (){
             if (parseInt(chooseAnsValues[i]) === parseInt(questions[i].correctAnswer)) {
                 totalPoint += questions[i].point
                 sum++;
+                a = 0;
             }
             if (chooseAnsValues[i] === undefined) {                
                 submitButton.style.display = 'inline-block'
@@ -79,8 +81,6 @@ var component = function (){
                 a++;
                 alert('Vui long nhap day du cau tra loi!')
                 break;
-            } else {
-                a = 0
             }
         }
     }
@@ -115,7 +115,6 @@ var component = function (){
         chooseAnsValues = [];
         sum = 0;
         totalPoint = 0;
-        submitchoose = 0;
         a = 0;
         nextButton.addEventListener('click', function(){
             document.getElementById('container').style.backgroundColor = '#1E90FF'
