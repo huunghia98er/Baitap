@@ -55,6 +55,7 @@ var component = function (){
             restartButton.style.display = 'none'
         }
     }
+
     var Check = (question, index) => {
         let chooseAnsValue
         question.answers.forEach((value,index) =>{
@@ -64,6 +65,7 @@ var component = function (){
         })
         chooseAnsValues[index] = chooseAnsValue
     }
+
     var CheckAnswers = () => {
         for (let i = 0; i < questions.length; i++){
             if (parseInt(chooseAnsValues[i]) === parseInt(questions[i].correctAnswer)) {
@@ -82,6 +84,7 @@ var component = function (){
             }
         }
     }
+
     var DisplayResult = function() {
         if (chooseAnsValues.length < questions.length || chooseAnsValues[index] === undefined) {
             document.getElementById('container').style.backgroundColor = '#1E90FF'
@@ -114,8 +117,23 @@ var component = function (){
             }
             restartButton.style.display = 'inline-block'
         })
-        CloseEvent
     }
+
+    var restartquiz = function() {
+        index = 0;
+        chooseAnsValues = [];
+        sum = 0;
+        totalPoint = 0;
+        submitchoose = 0;
+        a = 0;
+        nextButton.addEventListener('click', function(){
+            document.getElementById('container').style.backgroundColor = '#1E90FF'
+        })
+        prevButton.addEventListener('click', function(){
+            document.getElementById('container').style.backgroundColor = '#1E90FF'
+        })        
+    }
+
     var loadQuestion = (question, index) => {
         DisplayButton()
         document.getElementById('container').style.backgroundColor = '#1E90FF'
@@ -134,6 +152,7 @@ var component = function (){
         quizComponent.innerHTML = text
         quizComponent.style.display = "block"
     }
+
     var loadPage = function (){
         nextButton.addEventListener('click', function (){
             DisplayButton();
@@ -157,13 +176,7 @@ var component = function (){
             }
         })
         restartButton.addEventListener('click', function (){
-            index = 0;
-            chooseAnsValues = [];
-            sum = 0;
-            totalPoint = 0;
-            submitchoose = 0;
-            nextButton.removeEventListener('click', DisplayResult)
-            prevButton.removeEventListener('click', DisplayResult)
+            restartquiz();
             loadQuestion(questions[index],index);
         })
     }
