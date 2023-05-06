@@ -15,10 +15,10 @@ let ID_Input = document.getElementById('IDsv')
 let Class_Input = document.getElementById('Class')
 let Age_Input = document.getElementById('age')
 let submit = document.getElementById('submit')
-let result_name = document.getElementById('bug_name')
-let result_age = document.getElementById('bug_age')
-let result_class = document.getElementById('bug_class')
-let result_ID = document.getElementById('bug_ID')
+let result_name = document.getElementById('report_name')
+let result_age = document.getElementById('report_age')
+let result_class = document.getElementById('report_class')
+let result_ID = document.getElementById('report_ID')
 let reset_Input = document.getElementById('reset')
 let tablelist = document.getElementById('list')
 let std_list = document.getElementById('students_list')
@@ -45,13 +45,18 @@ function display_list(){
 }
 
 let check_ID = function(stu, stus) {
-    for (let i = 0; i < stus.length; i++){
-        if (stu.ID === stus[i].ID){
-            result_ID.innerHTML = "Mã ID đã tồn tại!"
-            flag = 1
-            break;
-        } else {
-            result_ID.innerHTML = "Mã ID hợp lệ!"
+    if (stu.ID === ''){
+        result_ID.innerHTML = '<p style="color: red">Mã ID không hợp lệ!</p>'
+        flag = 1;
+    } else {
+        for (let i = 0; i < stus.length; i++){
+            if (stu.ID === stus[i].ID){
+                result_ID.innerHTML = '<p style="color: red">Mã ID đã tồn tại!</p>'
+                flag = 1
+                break;
+            } else {
+                result_ID.innerHTML = '<p style="color: #5e08f1">Mã ID hợp lệ!</p>'
+            }
         }
     }
 }
@@ -59,11 +64,11 @@ let check_ID = function(stu, stus) {
 let check_class = function(stu, stus) {
     for (let i = 0; i < stus.length; i++){
         if (stu.Class == class_list[i].class){
-            result_class.innerHTML = "Lớp hợp lệ!"
+            result_class.innerHTML = '<p style="color: #5e08f1">Lớp hợp lệ!</p>'
             flag = 0
             break;
         } else {
-            result_class.innerHTML = "Lớp không tồn tại!"
+            result_class.innerHTML = '<p style="color: red">Lớp không tồn tại!</p>'
             flag = 1
         }
     }
@@ -73,16 +78,16 @@ function check_student(stu, stus, class_list) {
     flag = 0
     check_class(stu, class_list)
     if (stu.Name === ''){
-        result_name.innerHTML = "Tên không hợp lệ!"
+        result_name.innerHTML = '<p style="color: red">Tên không hợp lệ!</p>'
         flag = 1
     } else{
-        result_name.innerHTML = "Tên hợp lệ!"
+        result_name.innerHTML = '<p style="color: #5e08f1">Tên hợp lệ!</p>'
     }
     if (stu.Age <= 0 || stu.Age > 80){
-        result_age.innerHTML = "Tuổi không hợp lệ!"
+        result_age.innerHTML = '<p style="color: red">Tuổi không hợp lệ!</p>'
         flag = 1
     } else {
-        result_age.innerHTML = "Tuổi hợp lệ!"
+        result_age.innerHTML = '<p style="color: #5e08f1">Tuổi hợp lệ!</p>'
     }
     check_ID(stu, stus)
 }
