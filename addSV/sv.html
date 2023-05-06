@@ -10,21 +10,23 @@
 <body onload="display_list()">
     <div id = "container">
         <div>
-            <label for = "name">Nhap ten sinh vien</label><br>
+            <label for = "name">Nhập tên sinh viên</label><br>
             <input type = "text" id="name">
             <p id="bug_name"></p>
-            <label for = "age">Nhap tuoi</label><br>
+            <label for = "age">Nhập tuổi</label><br>
             <input type = "number" id="age">
             <p id="bug_age"></p>
-            <label for = "class">Lop</label><br>
+            <label for = "class">Lớp</label><br>
             <input type = "text" id="Class">
             <p id="bug_class"></p>
-            <label for = "IDsv">Ma sinh vien</label><br>
+            <label for = "IDsv">Mã sinh viên</label><br>
             <input type = "text" id="IDsv">
             <p id="bug_ID"></p>
         </div>
         <div>
             <input type="submit" id="submit" value="Submit">
+            <br>
+            <button id="reset">Reset</button>
         </div>
     </div>
     <div style="display: none;" id="students_list">
