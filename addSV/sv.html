@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh Vien</title>
+    <link rel="stylesheet" href="sv.css">
+</head>
+<body onload="tolocalstorage()">
+    <div id = "container">
+        <div>
+            <label for = "name">Nhap ten sinh vien</label><br>
+            <input type = "text" id="name">
+            <p id="bug_name"></p>
+            <label for = "age">Nhap tuoi</label><br>
+            <input type = "number" id="age">
+            <p id="bug_age"></p>
+            <label for = "class">Lop</label><br>
+            <input type = "text" id="Class">
+            <p id="bug_class"></p>
+            <label for = "IDsv">Ma sinh vien</label><br>
+            <input type = "text" id="IDsv">
+            <p id="bug_ID"></p>
+        </div>
+        <div>
+            <input type="submit" id="submit" value="Submit">
+        </div>
+    </div>
+    <div style="display: none;" id="students_list">
+        <h2>Danh sách sinh viên</h2>
+        <div id="table_list">
+            <table id="list"></table>
+        </div>
+    </div>
+
+</body>
+<script src="sv.js"></script>
+</html>
