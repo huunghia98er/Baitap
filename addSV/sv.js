@@ -61,8 +61,8 @@ let check_ID = function(stu, stus) {
     }
 }
 
-let check_class = function(stu, stus) {
-    for (let i = 0; i < stus.length; i++){
+let check_class = function(stu, class_list) {
+    for (let i = 0; i < class_list.length; i++){
         if (stu.Class == class_list[i].class){
             result_class.innerHTML = '<p style="color: #5e08f1">Lớp hợp lệ!</p>'
             flag = 0
