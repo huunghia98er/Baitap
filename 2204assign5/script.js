@@ -10,11 +10,12 @@ arr.forEach( button => {
       result.innerHTML = abc;
     }
     else if (e.target.innerHTML == "AC"){
-      abc = "";
+      abc = "0";
       result.innerHTML = abc;
     }
     else if (e.target.innerHTML == "DEL"){
       abc = abc.substring(0, abc.length-1);
+      if (abc == '') abc = '0';
       result.innerHTML = abc;
     }
     else if (e.target.innerHTML == "+/-"){
@@ -26,7 +27,11 @@ arr.forEach( button => {
       result.innerHTML = abc;
     }
     else {
+      if (abc == '0') abc = '';
       abc += e.target.innerHTML;
+      if (abc.length === 18){
+        abc = 'Loi qua ky tu!'
+      }
       result.innerHTML = abc;
     }
   })

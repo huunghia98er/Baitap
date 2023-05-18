@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script language="javascript" src="angular.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app='my-app'>
+        <!-- <div ng-controller='my-Controller'>
+            <div ng-repeat="(key,value) in data">
+                {{key}}: {{value}}
+            </div>
+            Hi, toi la {{data.name}}! <br>
+            Ngay sinh: {{data.DateOfBirth.day}}/{{data.DateOfBirth.month}}/{{data.DateOfBirth.year}} <br>
+            Lop: {{data.class}} <br>
+            Ma Sinh Vien: {{data.ID}}
+        </div>
+        <br>
+        <div ng-controller="my-Controller-2">
+            <input type="text" value="" ng-model="username">
+            <button ng-click='sayHello()'>In thong bao</button>
+            <hr>
+            {{greeting}}
+        </div>
+        <hr>
+        <div ng-controller="my-Controller-3">
+            <input type="text" value="" ng-model="username1">
+            <div ng-bind="username1"></div>
+        </div>
+        <hr> -->
+        <div ng-controller="my-Controller-4">
+            <div ng-init="students = ['John', 'David']">
+                <p>Do you want to show students?</p>
+                <input
+                type="radio"
+                name="1"
+                [(ngModel)]="myVar">
+                Yes
+                </input>
+                <div ng-show = 'myVar'>
+                    <ol>
+                        <li ng-repeat = 'student in students'>
+                            {{student}}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let module = angular.module('my-app', [])
+            // module.controller('my-Controller', function ($scope, $rootScope) {
+            //     $scope.data = {
+            //         name : 'Nguyen Huu Nghia',
+            //         DateOfBirth: {
+            //             day: 11,
+            //             month: 12,
+            //             year: 1998
+            //         },
+            //         class: 'Aptech',
+            //         ID: 'T2303010'
+            //     }
+                // $rootScope.data = {
+                //     name : 'Nguyen Huu Nghia',
+                //     DateOfBirth: {
+                //         day: 11,
+                //         month: 12,
+                //         year: 1998
+                //     },
+                //     class: 'Aptech',
+                //     ID: 'T2303010'
+            //     // }
+            // })
+
+            // .controller('my-Controller-2', function($scope) {
+            //     $scope.sayHello = function() {
+            //         $scope.greeting = 'Xin chao ' + $scope.username + '!'
+            //     }
+            // })
+
+            // .controller('my-Controller-3', function($scope) {
+            // })
+
+            .controller('my-Controller-4', function($scope) {
+            })
+    </script>
+</body>
+
+
+
+</html>

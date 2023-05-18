@@ -1,0 +1,45 @@
+body {
+    background-color: #F5FFFA;
+    text-align: center;
+    font-size: 30px;
+}
+
+header {
+    border-style: none;
+    border-radius: 9px;
+    background-color: #e5b371;
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+#nav {
+    margin: 65px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 26px;
+    display: inline-block;
+    text-align: right;
+}
+
+#nav a {
+    padding: 30px;
+    text-decoration: none;
+    color: #4f2303;
+}
+
+#container {
+    border-style: groove;
+    border-radius: 9px;
+    width: 55%;
+    text-align: center;
+    display: inline-block;
+    margin: 50px auto 0 auto;
+    background-color: #ddd2bf;
+}
+
+button {
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
